@@ -9,6 +9,8 @@ const TodoAction = require('../../action/todo.action');
     template: `<table class="table table-bordered">
                     <thead>
                         <tr>
+                            <th>#
+                            </th>
                             <th>
                                 Items
                             </th>  
@@ -18,9 +20,11 @@ const TodoAction = require('../../action/todo.action');
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let t of todoitem">
+                        <tr *ngFor="let t of todoitem; let i = index">
+                            <td>{{i+1}}
+                            </td>
                             <td>
-                                {{t.name}}
+                               {{t.name}}
                             </td>
                             <td>
                                 <a (click)="removeitem(t.id)">Delete</a>
