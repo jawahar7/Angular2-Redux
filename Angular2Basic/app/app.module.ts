@@ -10,8 +10,6 @@ import { TodoComponent } from './components/todo/todo.component';
 import { AddTodoComponent } from './components/todo/addtodo.component';
 import { TodoListComponent } from './components/todo/todolist.component';
 
-export const store: Store<AppStore> = createStore(RootReducer) as Store<AppStore>;
-
 @NgModule({
     imports: [BrowserModule, FormsModule, NgReduxModule.forRoot() ],
     declarations: [AppComponent, TodoComponent, AddTodoComponent, TodoListComponent],
@@ -19,7 +17,8 @@ export const store: Store<AppStore> = createStore(RootReducer) as Store<AppStore
 })
 
 export class AppModule {
+    store: Store<AppStore> = createStore(RootReducer) as Store<AppStore>;
     constructor(private ngRedux: NgRedux<AppStore>){
-        ngRedux.provideStore(store);
+        ngRedux.provideStore(this.store);
     }
 }

@@ -1,0 +1,26 @@
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>#
+            </th>
+            <th>
+                Items
+            </th>
+            <th>
+                Delete
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let t of todoitem; let i = index">
+            <td>{{i+1}}
+            </td>
+            <td>
+                <span [class.complete]="t.completed" (click)="toggletodo(t.id)"><a>{{t.name}}</a></span>
+            </td>
+            <td>
+                <a (click)="deletetodo(t.id)">Delete</a>
+            </td>
+        </tr>
+    </tbody>
+</table>

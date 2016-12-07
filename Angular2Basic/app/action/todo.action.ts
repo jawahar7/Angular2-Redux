@@ -9,3 +9,9 @@ export function removeTodo(id:string){
         type: 'REMOVE_TODO', payload: {id}
     }
 }
+
+export function completeTodo(id: string){
+    return {
+        type: 'CHANGE_STATUS', payload: {id}
+    }
+}
