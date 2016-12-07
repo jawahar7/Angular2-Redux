@@ -10,8 +10,8 @@ export function removeTodo(id:string){
     }
 }
 
-export function completeTodo(id: string){
+export function toggleTodo(id: string){
     return {
-        type: 'CHANGE_STATUS', payload: {id}
+        type: 'TOGGLE_TODO', payload: {id}
     }
 }

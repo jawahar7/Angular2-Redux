@@ -8,8 +8,8 @@ export const TodoReducer = (state: List<Todo> = List<Todo>(), action) => {
             return addtodo(state, action);
         case 'REMOVE_TODO':
             return removetodo(state, action);  
-        case 'CHANGE_STATUS':   
-            return completetodo(state, action);                   
+        case 'TOGGLE_TODO':   
+            return toggletodo(state, action);                   
         default:
             return state;
     }
@@ -24,7 +24,7 @@ function removetodo(state: List<Todo>, action) {
     return state.remove(state.findIndex(function(items){ return items.id === action.payload.id}));
 }
 
-function completetodo(state: List<Todo>, action) {   
+function toggletodo(state: List<Todo>, action) {   
     const idx = state.findIndex(function(items){ return items.id === action.payload.id});
     return state.update(idx, x=>{x.completed = !x.completed; return x});     
 }

@@ -10,7 +10,7 @@ const TodoAction = require('../../action/todo.action');
     template: `<div class="col-md-12">
                     <h4>Todo List</h4>
                     <add-todo></add-todo><br/>
-                    <todo-list [todoitem]="todos" [ac_deletetodo]="actions.removeTodo" [ac_completetodo]="actions.completeTodo"></todo-list>                 
+                    <todo-list [todoitem]="todos" [ac_deletetodo]="actions.removeTodo" [ac_completetodo]="actions.toggleTodo"></todo-list>                 
                 </div>`   
 })
 
